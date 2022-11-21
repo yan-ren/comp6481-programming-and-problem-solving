@@ -55,12 +55,13 @@ public class TournamentResults {
 
 	public static void processRequestSearchTeamByID(TeamList t1, TeamList t2) {
 		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter teamID for search: ");
 		String teamID = sc.nextLine().trim();
 		while (!teamID.equals("")) {
 			if (t1.contains(teamID)) {
-				t1.find(teamID);
-			} else if (t1.contains(teamID)) {
-				t2.find(teamID);
+				System.out.println(t1.find(teamID).getTeam());
+			} else if (t2.contains(teamID)) {
+				System.out.println(t2.find(teamID).getTeam());
 			} else {
 				System.out.println("TeamID: " + teamID + " not found");
 			}

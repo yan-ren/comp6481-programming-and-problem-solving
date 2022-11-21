@@ -8,7 +8,6 @@ package a2;
 import java.util.Objects;
 import java.util.Scanner;
 
-// TODO: isInTheGroup
 public class Team implements Groupable, Cloneable, Comparable<Team> {
 
 	private String teamID;
@@ -101,6 +100,9 @@ public class Team implements Groupable, Cloneable, Comparable<Team> {
 
 	@Override
 	public boolean isInTheGroup(Team t) {
+		if (this.group == "" || t.group == "") {
+			return false;
+		}
 		return group.equals(t.group);
 	}
 
@@ -128,9 +130,7 @@ public class Team implements Groupable, Cloneable, Comparable<Team> {
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
+		if ((obj == null) || (getClass() != obj.getClass()))
 			return false;
 		Team other = (Team) obj;
 		return gamesLost == other.gamesLost && gamesPlayed == other.gamesPlayed && gamesWon == other.gamesWon
@@ -145,5 +145,4 @@ public class Team implements Groupable, Cloneable, Comparable<Team> {
 		}
 		return Double.compare(o.netRunRate, this.netRunRate);
 	}
-
 }

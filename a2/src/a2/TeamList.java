@@ -29,6 +29,7 @@ public class TeamList {
 			this.next = node.next;
 		}
 
+		@Override
 		public TeamNode clone() throws CloneNotSupportedException {
 			TeamNode clonedObj = (TeamNode) super.clone();
 			clonedObj.team = (Team) this.team.clone();
@@ -74,9 +75,19 @@ public class TeamList {
 		size++;
 	}
 
+	/**
+	 * 
+	 * If the index is not valid (a valid index must have a value between zero and
+	 * size-1), then the method must throw a NoSuchElementException and terminates
+	 * the program. If index is valid, then the method creates a node with passed
+	 * Team object and inserts this node at the given index.
+	 * 
+	 * @param team
+	 * @param index
+	 */
 	public void insertAtIndex(Team team, int index) {
 		if (index < 0 || index > size - 1) {
-			throw new NoSuchElementException();
+			throw new NoSuchElementException("insertAtIndex");
 		}
 		TeamNode newNode = new TeamNode();
 		newNode.team = team;
@@ -100,13 +111,21 @@ public class TeamList {
 		size++;
 	}
 
+	/**
+	 * If index is not valid, method must throw a NoSuchElementException and
+	 * terminate the program. Otherwise, node pointed by that index is deleted from
+	 * the list.
+	 * 
+	 * @param index
+	 */
 	public void deleteFromIndex(int index) {
 		if (head == null || index < 0 || index > size - 1)
-			throw new NoSuchElementException();
+			throw new NoSuchElementException("deleteFromIndex");
 
 		TeamNode temp = head;
 		if (index == 0) {
 			head = temp.next;
+			size--;
 			return;
 		}
 		for (int i = 0; temp != null && i < index - 1; i++)
@@ -119,9 +138,12 @@ public class TeamList {
 		size--;
 	}
 
+	/**
+	 * Deletes the first node in the list (the one pointed by head)
+	 */
 	public void deleteFromStart() {
 		if (size == 0) {
-			throw new NoSuchElementException();
+			throw new NoSuchElementException("deleteFromStart");
 		}
 
 		TeamNode temp = head;
@@ -130,9 +152,16 @@ public class TeamList {
 		size--;
 	}
 
+	/**
+	 * If index is not valid, the method simply returns; otherwise, object in list
+	 * at passed index must be replaced with the object passed.
+	 * 
+	 * @param team
+	 * @param index
+	 */
 	public void replaceAtIndex(Team team, int index) {
 		if (index < 0 || index > size - 1) {
-			throw new NoSuchElementException();
+			return;
 		}
 
 		// start from the head:
@@ -145,6 +174,13 @@ public class TeamList {
 		node.team = team;
 	}
 
+	/**
+	 * If such an object is found, then method returns a pointer to that teamNode;
+	 * otherwise, method returns null.
+	 * 
+	 * @param teamID
+	 * @return
+	 */
 	public TeamNode find(String teamID) {
 		TeamNode node = head;
 		int iteration = 0;
@@ -161,6 +197,13 @@ public class TeamList {
 		return node;
 	}
 
+	/**
+	 * Method returns true if a team with that teamID is in the list; otherwise, the
+	 * method returns false
+	 * 
+	 * @param teamID
+	 * @return
+	 */
 	public boolean contains(String teamID) {
 		TeamNode node = head;
 		while (node != null) {
@@ -217,6 +260,7 @@ public class TeamList {
 		return list;
 	}
 
+	@Override
 	public String toString() {
 		String s = "";
 		TeamNode node = head;
@@ -226,5 +270,9 @@ public class TeamList {
 		}
 
 		return s;
+	}
+
+	public int getSize() {
+		return size;
 	}
 }
