@@ -1,4 +1,3 @@
-package test;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -80,13 +79,13 @@ public class Exam3_3B {
 	public static int[][] reflect(int[][] input) {
 		int[][] result = new int[input.length * 2][input[0].length + 1];
 
-//		copy first half
+		// copy first half
 		for (int i = 0; i < input.length; i++) {
 			for (int j = 1; j < result[i].length; j++) {
 				result[i][j] = input[i][j - 1];
 			}
 		}
-//		copy second half
+		// copy second half
 		for (int i = input.length; i < result.length; i++) {
 			result[i][0] = 1;
 			for (int j = 1; j < result[i].length; j++) {

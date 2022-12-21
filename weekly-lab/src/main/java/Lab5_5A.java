@@ -1,4 +1,3 @@
-package test;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -30,8 +29,8 @@ public class Lab5_5A {
 			s2 += c2[i];
 		}
 
-//		System.out.println(s1);
-//		System.out.println(s2);
+		// System.out.println(s1);
+		// System.out.println(s2);
 
 		if (s1.compareTo(s2) < 0) {
 			return "SMALLER";

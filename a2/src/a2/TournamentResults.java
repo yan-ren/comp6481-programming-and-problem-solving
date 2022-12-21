@@ -24,12 +24,10 @@ AFGHANISTAN 5 2 3 +1.053 4
 NAMIBIA 5 1 4 -1.890 2
 SCOTLAND 5 0 5 -3.543 0
 
-TeamName, number of matches played, number of matches won, number
-of matches lost, net runrate, and number of points
-
-Figure 2
 AUSTRALIA
 NEW_ZEALAND
+NAMIBIA
+SOUTH_AFRICA
  */
 public class TournamentResults {
 
@@ -46,8 +44,8 @@ public class TournamentResults {
 		ArrayList<Team> l2 = t2.toArrayList();
 		Collections.sort(l1);
 		Collections.sort(l2);
-//		System.out.println(l1);
-//		System.out.println(l2);
+		// System.out.println(l1);
+		// System.out.println(l2);
 		processRequestInformation(l1, l2);
 
 		processRequestSearchTeamByID(t1, t2);

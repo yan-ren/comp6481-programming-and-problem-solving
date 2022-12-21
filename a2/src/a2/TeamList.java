@@ -186,6 +186,7 @@ public class TeamList {
 		int iteration = 0;
 		while (node != null) {
 			if (node.team.getTeamID().equals(teamID)) {
+				System.out.println("find method iteration: " + iteration);
 				return node;
 			}
 

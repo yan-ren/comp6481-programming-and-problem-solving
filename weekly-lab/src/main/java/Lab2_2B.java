@@ -1,4 +1,3 @@
-package archived;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -25,8 +24,8 @@ public class Lab2_2B {
 		int[] plays = Arrays.stream(sc.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray();
 		int count = 0;
 		while (count < plays.length) {
-//			System.out.println("current A:" + A);
-//			System.out.println("current B:" + B);
+			// System.out.println("current A:" + A);
+			// System.out.println("current B:" + B);
 			if (aTurn) {
 				A = A + plays[count];
 				A = applySnakeOrLadder(A, map);

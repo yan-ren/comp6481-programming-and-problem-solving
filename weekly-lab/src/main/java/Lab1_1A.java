@@ -1,4 +1,3 @@
-package archived;
 
 import java.util.Scanner;
 
@@ -30,6 +29,6 @@ public class Lab1_1A {
 	}
 
 	public static void nameThree(String[] names) {
-		System.out.print(names[2] + " " + names[0] +  " " + names[1]);
+		System.out.print(names[2] + " " + names[0] + " " + names[1]);
 	}
 }

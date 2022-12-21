@@ -1,4 +1,3 @@
-package test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -23,8 +22,8 @@ public class Lab5_5B {
 			count--;
 		}
 
-//		System.out.println(countMap);
-//		System.out.println(storeMap);
+		// System.out.println(countMap);
+		// System.out.println(storeMap);
 		List<String> result = getResult(countMap, storeMap);
 		Collections.sort(result);
 		String p = result.get(0);
